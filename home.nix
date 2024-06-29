@@ -9,6 +9,7 @@
 			htop
 			tree
       qbittorrent
+      python313
 		];
 	};
 
@@ -22,5 +23,4 @@
         		defaultCursor = true;
       		};
 	};
-
 }
