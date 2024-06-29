@@ -163,6 +163,7 @@
      grim
      xfce.thunar
      blueberry
+     slurp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
