@@ -13,7 +13,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  services.power-profiles-daemon.enable = false;
 
   time.timeZone = "Europe/Warsaw";
 
@@ -32,8 +31,6 @@
 
 
   services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = false;
-
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "pl";
@@ -74,8 +71,8 @@
   programs.light.enable = true;
 
   programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
+    enable = true;
+    xwayland.enable = true;
   };
 
 
@@ -111,7 +108,8 @@
      fish
      neofetch
      waybar
-     hyprpaper
+     swww
+
      dunst
      libnotify
      alacritty
@@ -127,7 +125,6 @@
      go
      nodejs
      bun
-#     python
   
      gleam
      vscode
@@ -145,7 +142,7 @@
         flavor = "mocha";
         font  = "Noto Sans";
         fontSize = "10";
-        background = "${/home/relow/wallpapers/wallhaven-jxj22q.png}";
+        background = "${/home/relow/wallpapers2/misc/cat-sound.png}";
         loginBackground = true;
      })
   ];
@@ -228,7 +225,6 @@
       base0E = "cba6f7";
       base0F = "f2cdcd";
     };
-    imageScalingMode = "fill";
   };
 
   # This value determines the NixOS release from which the default
