@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
@@ -35,25 +34,6 @@
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
 
- services.displayManager.sddm = {
-  enable = true;
-  enableHidpi = true;
-  theme = "sugar-candy";
-
-  wayland = {
-    enable = true;
-  };
-
-  extraPackages = with pkgs; [
-    kdePackages.layer-shell-qt
-  ];
-
-  settings = {
-    General = {
-     GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=1.5,QT_FONT_DPI = 192";
-    };
-  };
- };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "pl";
@@ -100,26 +80,22 @@
 
 
   environment.sessionVariables = {
-	NIXOS_OZONE_WL = "1";
-	QT_AUTO_SCREEN_SCALE_FACTOR = "2";
-	XCURSOR_SIZE = "50";
-	GDK_SCALE=2;
+    NIXOS_OZONE_WL = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "2";
+    GDK_SCALE=2;
   };
 
   fonts = {
   	fontDir.enable = true;
-
 	  packages = with pkgs; [
-		noto-fonts
-		fira-code
-		fira-code-symbols
-		noto-fonts-cjk
-  		noto-fonts-emoji
-		nerdfonts
+      noto-fonts
+      fira-code
+      fira-code-symbols
+      noto-fonts-cjk
+      noto-fonts-emoji
+      nerdfonts
 	  ];
   };
-
-
 
   environment.systemPackages = with pkgs; [
      libgcc
@@ -164,7 +140,39 @@
      xfce.thunar
      blueberry
      slurp
+
+     (catppuccin-sddm.override {
+        flavor = "mocha";
+        font  = "Noto Sans";
+        fontSize = "10";
+        background = "${/home/relow/wallpapers/wallhaven-jxj22q.png}";
+        loginBackground = true;
+     })
   ];
+
+  services.displayManager.sddm = {
+    enable = true;
+    enableHidpi = true;
+    theme = "catppuccin-mocha";
+
+    wayland = {
+      enable = true;
+    };
+
+    package = pkgs.kdePackages.sddm;
+
+    extraPackages = with pkgs; [
+      kdePackages.layer-shell-qt
+    ];
+
+
+    settings = {
+      General = {
+       GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=1.5";
+       DateSize = "2";
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -191,12 +199,37 @@
     };
   };
 
-  nix.gc = {
-  	automatic = true;
-	dates = "weekly";
-	options = "--delete-older-than 30d";
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
+  stylix = {
+    enable = true;
+    base16Scheme = {
+      base00 = "#11111b";
+      base01 = "181825";
+      base02 = "313244";
+      base03 = "45475a";
+      base04 = "585b70";
+      base05 = "cdd6f4";
+      base06 = "f5e0dc";
+      base07 = "b4befe";
+      base08 = "f38ba8";
+      base09 = "fab387";
+      base0A = "f9e2af";
+      base0B = "a6e3a1";
+      base0C = "94e2d5";
+      base0D = "89b4fa";
+      base0E = "cba6f7";
+      base0F = "f2cdcd";
+    };
+    imageScalingMode = "fill";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

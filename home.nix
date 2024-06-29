@@ -6,7 +6,7 @@
 
 		packages = with pkgs; [
 			neovim
-			htop
+      btop
 			tree
       qbittorrent
       python313
