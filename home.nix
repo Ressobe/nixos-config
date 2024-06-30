@@ -5,6 +5,7 @@
     ./user/git.nix
     ./user/alacritty.nix
     ./user/wofi.nix
+    ./user/waybar.nix
   ];
 
 	home = {
