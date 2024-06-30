@@ -59,6 +59,7 @@
       options = "--delete-older-than 30d";
     };
   };
+  system.autoUpgrade.enable = true;
 
   system.stateVersion = "24.11";
 }
