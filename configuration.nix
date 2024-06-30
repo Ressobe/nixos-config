@@ -225,6 +225,7 @@
       base0E = "cba6f7";
       base0F = "f2cdcd";
     };
+    targets.fish.enable = false;
   };
 
   # This value determines the NixOS release from which the default
