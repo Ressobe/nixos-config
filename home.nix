@@ -6,12 +6,26 @@
 
 		packages = with pkgs; [
 			neovim
+      fastfetch
+      pfetch
       btop
 			tree
       qbittorrent
       python313
       yt-dlp
+      rsync
 		];
+	};
+
+	home.pointerCursor = {
+		package = pkgs.vanilla-dmz;
+      		name = "Vanilla-DMZ";
+      		size = 24;
+      		gtk.enable = true;
+      		x11 = {
+        		enable = true;
+        		defaultCursor = true;
+      		};
 	};
 
   programs.git = {
@@ -168,15 +182,4 @@
       };
     };
   };
-
-	home.pointerCursor = {
-		package = pkgs.vanilla-dmz;
-      		name = "Vanilla-DMZ";
-      		size = 24;
-      		gtk.enable = true;
-      		x11 = {
-        		enable = true;
-        		defaultCursor = true;
-      		};
-	};
 }
