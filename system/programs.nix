@@ -1,7 +1,6 @@
 { config, pkgs, ...} :
 
 {
-
   programs.fish.enable = true;
 
   programs.light.enable = true;
@@ -11,6 +10,7 @@
     xwayland.enable = true;
   };
 
+  virtualisation.docker.enable = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -19,6 +19,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+     openssl
      libgcc
      gcc
      home-manager
@@ -39,7 +40,6 @@
      tmux
      discord
      obsidian
-     docker
      pwvucontrol
 
      rustc
