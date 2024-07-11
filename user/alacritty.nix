@@ -12,9 +12,9 @@
         };
       };
       window = {
-        opacity = 0.95;
+        opacity = 1.0;
         padding.x = 15;
-        padding.y = 15;
+        padding.y = 12;
       };
 
       colors = {

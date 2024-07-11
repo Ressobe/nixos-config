@@ -23,6 +23,10 @@
       python313
       yt-dlp
       rsync
+      firefox
+      turso-cli
+      tor-browser
+      lazygit
 		];
 	};
 
