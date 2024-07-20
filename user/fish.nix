@@ -15,6 +15,7 @@
       lt = "eza --tree";
       cd = "z";
       g = "git";
+      # npm = "bun";
     };
     functions = {
       fish_prompt = {

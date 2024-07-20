@@ -15,6 +15,7 @@
 
 		packages = with pkgs; [
 			neovim
+      nom
       fastfetch
       pfetch
       btop
@@ -27,6 +28,10 @@
       turso-cli
       tor-browser
       lazygit
+      dotnet-sdk_8
+      libreoffice
+      unzip
+      zed-editor
 		];
 	};
 
