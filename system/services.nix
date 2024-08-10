@@ -56,6 +56,7 @@
   services.openssh.enable = true;
 
   services.auto-cpufreq.enable = true;
+
   services.auto-cpufreq.settings = {
     battery = {
        governor = "powersave";
@@ -65,5 +66,13 @@
        governor = "performance";
        turbo = "auto";
     };
+  };
+  services = {
+      syncthing = {
+          enable = true;
+          user = "relow";
+          dataDir = "/home/relow"; 
+          configDir = "/home/relow/.config/syncthing"; 
+      };
   };
 }

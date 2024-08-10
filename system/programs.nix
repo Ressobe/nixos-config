@@ -61,7 +61,7 @@
         flavor = "mocha";
         font  = "Noto Sans";
         fontSize = "10";
-        background = "${/home/relow/wallpapers/misc/cat-sound.png}";
+        background = "${/home/relow/wallpapers/solids/bkg1.png}";
         loginBackground = true;
      })
   ];

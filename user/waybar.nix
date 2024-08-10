@@ -4,8 +4,12 @@
   programs.waybar = {
     enable = true;
     settings = {
+
       mainBar = {
-        output = "eDP-1";
+        output = [
+          "eDP-1" 
+          "HDMI-A-1"
+        ];
         layer = "top";
         position = "top";
         height = 6;
