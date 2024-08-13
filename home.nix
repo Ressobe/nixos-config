@@ -6,12 +6,13 @@
     ./user/alacritty.nix
     ./user/wofi.nix
     ./user/waybar.nix
+    ./user/hyprland.nix
   ];
 
 	home = {
 		username = "relow";
 		homeDirectory = "/home/relow";
-		stateVersion = "24.05";
+		stateVersion = "24.11";
 
 		packages = with pkgs; [
 			neovim
@@ -32,6 +33,7 @@
       libreoffice
       unzip
       zed-editor
+      termusic
 		];
 	};
 
