@@ -1,10 +1,7 @@
 { config, pkgs, ...} :
 
 {
-  wayland.windowManager.hyprland.settings = {
-    enable = true;
-
-    extraConfig = ''
+  home.file."~/.config/hypr/hyprland.conf".text = ''
       exec-once = swww init & swww img /home/relow/wallpapers/minimalistic/unicat.png & waybar
       monitor=eDP-1,2520x1680@90,auto,auto
 
@@ -154,6 +151,6 @@
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
-    '';
-  };
+
+  '';
 }
