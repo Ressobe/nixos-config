@@ -10,9 +10,9 @@
 
     style = ''
       /* Mocha Pink */
-      @define-color accent #cba6f7;
+      @define-color accent #d3c6aa;
       @define-color txt #cdd6f4;
-      @define-color bg #11111b;
+      @define-color bg #121212;
       @define-color bg2 #313244;
 
       * {

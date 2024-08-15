@@ -34,6 +34,7 @@
       unzip
       zed-editor
       termusic
+      lua-language-server
 		];
 	};
 
